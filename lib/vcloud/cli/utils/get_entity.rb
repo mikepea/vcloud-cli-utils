@@ -23,7 +23,7 @@ module Vcloud
           when 'orgVdc'
             pp vcloud.get_vdc(identifier).body
           else
-            puts "Entity #{entity_type} is not recognised"
+            pp eval "vcloud.#{entity_type}(identifier).body"
           end
         end
 
