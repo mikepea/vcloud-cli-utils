@@ -3,7 +3,7 @@ vcloud-cli-utils
 
 Simple CLI utils to talk to the vCloud Director API
 
-These are very hacky utils that I've found handy whilst developing
+These are very hacky utils that I've found handy whilst helping develop
 a more rich toolchain for GOV.UK:
 
 * https://github.com/alphagov/vcloud-core
