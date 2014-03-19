@@ -33,3 +33,9 @@ be slightly, or completely, different from the raw XML returned from the API).
 any fog service request that takes a single ID as a parameter (eg
 'get_vm_capabilities')
 
+### vcloud-vapp-delete
+
+Deletes a vApp by name or id. --force option stops the vApp first, as vCloud
+sensibly prevents running vApps from being deleted.
+
+
