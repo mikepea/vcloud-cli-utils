@@ -3,7 +3,7 @@
 require 'rubygems'
 require 'bundler/setup'
 require 'pp'
-require 'vcloud'
+require 'vcloud/core'
 require 'methadone'
 
 ENV['FOG_MOCK'] && Fog.mock!
@@ -52,8 +52,6 @@ class App
   shells out to cURL with the remainder of ARGV
 
   See https://github.com/alphagov/vcloud-tools for more info'
-
-  version Vcloud::VERSION
 
   go!
 end
