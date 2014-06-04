@@ -14,7 +14,7 @@ module Vcloud
 
           main do |identifier|
             vcloud = ::Fog::Compute::VcloudDirector.new
-            if identifier =~ /^vapp-/
+            if identifier =~ /^vapp-[-0-9a-f]+/
               vapp = Vcloud::Core::Vapp.new(identifier)
             else
               vapp = Vcloud::Core::Vapp.get_by_name(identifier)
