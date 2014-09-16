@@ -7,3 +7,9 @@ if ENV['VCLOUD_CORE_DEV_MASTER']
 elsif ENV['VCLOUD_CORE_DEV_LOCAL']
   gem 'vcloud-core', :path => '../vcloud-core'
 end
+
+if ENV['FOG_DEV_MASTER']
+  gem 'fog', :git => 'git@github.com:fog/fog.git', :branch => 'master'
+elsif ENV['FOG_DEV_LOCAL']
+  gem 'fog', :path => '../fog'
+end
