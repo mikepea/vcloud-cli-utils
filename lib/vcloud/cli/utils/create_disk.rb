@@ -21,8 +21,8 @@ module Vcloud
             end
             Fog.mock! if ENV['FOG_MOCK']
             puts "Creating disk in #{vdc.id}: #{disk_name} => #{disk_size}"
-            body = vcloud.post_create_disk(vdc.id, disk_name, disk_size).body
-            vcloud.process_task(body[:Disk][:Tasks])
+            body = vcloud.post_upload_disk(vdc.id, disk_name, disk_size).body
+            vcloud.process_task(body[:Disk][:Tasks][:Task])
           end
 
           arg :identifier
