@@ -4,7 +4,7 @@ require 'gem_publisher'
 task :default => [:rubocop]
 
 task :publish_gem do
-  gem = GemPublisher.publish_if_updated("vcloud-disk_launcher.gemspec", :rubygems)
+  gem = GemPublisher.publish_if_updated("vcloud-cli-utils.gemspec", :rubygems)
   puts "Published #{gem}" if gem
 end
 
