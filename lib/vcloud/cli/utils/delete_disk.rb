@@ -1,6 +1,3 @@
-require 'methadone'
-require 'pp'
-
 module Vcloud
   module CLI
     module Utils
@@ -12,10 +9,9 @@ module Vcloud
         def self.run
 
           main do |disk_id|
-            vcloud = ::Fog::Compute::VcloudDirector.new
             Fog.mock! if ENV['FOG_MOCK']
-            task = vcloud.delete_disk(disk_id).body
-            vcloud.process_task(task)
+            disk = Vcloud::Core::IndependentDisk.new(disk_id)
+            disk.destroy
           end
 
           arg :disk_id

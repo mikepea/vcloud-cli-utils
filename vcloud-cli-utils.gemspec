@@ -23,11 +23,10 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency 'fog', '>= 1.20.0'
   s.add_runtime_dependency 'methadone'
-  s.add_runtime_dependency 'vcloud-core', '>= 0.0.6'
+  s.add_runtime_dependency 'vcloud-core', '>= 0.15.0'
   s.add_development_dependency 'rake'
   s.add_development_dependency 'rspec', '~> 2.14.1'
   s.add_development_dependency 'rubocop', '~> 0.23.0'
   s.add_development_dependency 'simplecov', '~> 0.8.2'
   s.add_development_dependency 'gem_publisher', '1.2.0'
 end
-
