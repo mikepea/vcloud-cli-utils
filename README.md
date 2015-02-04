@@ -33,9 +33,40 @@ be slightly, or completely, different from the raw XML returned from the API).
 any fog service request that takes a single ID as a parameter (eg
 'get_vm_capabilities')
 
-### vcloud-vapp-delete
+### vcloud-curl
+
+Wrapper around curl to use Fog credentials & vcloud-login. Very useful for
+getting the complete XML response from the API, for comparison against the data
+returned by the Fog request layer
+
+### vcloud-delete-vapp
 
 Deletes a vApp by name or id. --force option stops the vApp first, as vCloud
 sensibly prevents running vApps from being deleted.
 
+### vcloud-delete-disk
 
+Deletes an Independent Disk by ID.
+
+### vcloud-delete-network
+
+Deletes an orgVdcNetwork by ID
+
+### vcloud-attach-disk
+
+Attaches an independent disk to a stopped or running VM.
+
+NB: To create a disk, see vcloud-disk_launcher Gem/tool.
+
+### vcloud-detach-disk
+
+Detaches an independent disk from a stopped or running VM. NB: this can cause
+problems within the guest OS - beware!
+
+### vcloud-start-vapp
+
+Start a stopped vApp by name or ID.
+
+### vcloud-stop-vapp
+
+Stop a started vApp by name or ID.
