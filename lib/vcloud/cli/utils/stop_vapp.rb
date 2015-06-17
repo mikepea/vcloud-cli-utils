@@ -20,7 +20,8 @@ module Vcloud
               vapp = Vcloud::Core::Vapp.get_by_name(identifier)
             end
             Fog.mock! if ENV['FOG_MOCK']
-            task = vcloud.post_undeploy_vapp(vapp.id).body
+            options = { :UndeployPowerAction => 'shutdown' }
+            task = vcloud.post_undeploy_vapp(vapp.id, options).body
             vcloud.process_task(task)
           end
 

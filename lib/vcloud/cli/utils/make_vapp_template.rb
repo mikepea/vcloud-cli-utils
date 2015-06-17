@@ -57,7 +57,8 @@ module Vcloud
             vcloud.process_task(task)
 
             puts "Stopping vApp completely"
-            task = vcloud.post_undeploy_vapp(vapp.id).body
+            options = { :UndeployPowerAction => 'shutdown' }
+            task = vcloud.post_undeploy_vapp(vapp.id, options).body
             vcloud.process_task(task)
 
             puts "Turn the newly provisioned vApp into a vAppTemplate (in vDC #{vdc_name})"
